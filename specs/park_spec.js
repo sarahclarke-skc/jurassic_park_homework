@@ -92,7 +92,7 @@ let dino4;
     assert.strictEqual(actual, 127750)
   });
 
-  xit('should be able to remove all dinosaurs of a particular species', function() {
+  it('should be able to remove all dinosaurs of a particular species', function() {
     park.addDino(dino);
     park.addDino(dino1);
     park.addDino(dino2);
