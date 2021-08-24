@@ -31,7 +31,14 @@ let park;
     assert.strictEqual(actual, 1)
   });
 
-  it('should be able to remove a dinosaur from its collection');
+  it('should be able to remove a dinosaur from its collection', function () {
+    park.addDino('T-Rex');
+    park.addDino('Raptor');
+    park.removeDino('Raptor');
+    const expected = ['T-Rex'];
+    const actual = park.collectionOfDinos;
+    assert.deepStrictEqual(actual, expected)
+  });
 
   it('should be able to find the dinosaur that attracts the most visitors');
 
