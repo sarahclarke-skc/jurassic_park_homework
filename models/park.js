@@ -56,4 +56,16 @@ Park.prototype.totalRevenue = function() {
     return this.totalYearlyVisitors() * this.ticketPrice
 }
 
+// Park.prototype.removeSpecies = function(species) {
+
+//     const collectionPostMeteor = []
+
+//     for (const dino of this.collectionOfDinos) {
+//         if (species === dino.species) {
+//             collectionPostMeteor.push(dino);
+//         }
+//     }
+//     this.collectionOfDinos = collectionPostMeteor;
+// }
+
 module.exports = Park;
