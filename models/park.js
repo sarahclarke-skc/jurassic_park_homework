@@ -29,9 +29,7 @@ Park.prototype.mostVisitedDino = function() {
 };
 
 Park.prototype.findBySpecies = function(species) {
-
     const listSameSpecies = [];
-
     for (const dino of this.collectionOfDinos) {
         if (species === dino.species) {
             listSameSpecies.push(dino)

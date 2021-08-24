@@ -11,7 +11,7 @@ let dino2;
 let dino3;
 let dino4;
 
-  beforeEach(function () {
+  beforeEach(function() {
     park = new Park('Jurassic Park', 10);
     dino = new Dinosaur('T-Rex', 'carnivore', 5)
     dino1 = new Dinosaur('T-Rex', 'carnivore', 10);
@@ -20,28 +20,28 @@ let dino4;
     dino4 = new Dinosaur('Stegosaurus', 'herbivore', 40);
   });
 
-  it('should have a name', function () {
+  it('should have a name', function() {
     const actual = park.name;
     assert.strictEqual(actual, 'Jurassic Park');
   });
 
-  it('should have a ticket price', function () {
+  it('should have a ticket price', function() {
     const actual = park.ticketPrice;
     assert.strictEqual(actual, 10)
   });
 
-  it('should have a collection of dinosaurs', function () {
+  it('should have a collection of dinosaurs', function() {
     const actual = park.collectionOfDinos;
     assert.deepStrictEqual(actual, [])
   });
 
-  it('should be able to add a dinosaur to its collection', function () {
+  it('should be able to add a dinosaur to its collection', function() {
     park.addDino('T-Rex');
     const actual = park.collectionOfDinos.length
     assert.strictEqual(actual, 1)
   });
 
-  it('should be able to remove a dinosaur from its collection', function () {
+  it('should be able to remove a dinosaur from its collection', function() {
     park.addDino('T-Rex');
     park.addDino('Raptor');
     park.removeDino('Raptor');
@@ -59,16 +59,15 @@ let dino4;
     assert.deepStrictEqual(actual, dino4)
   });
 
-  xit('should be able to find all dinosaurs of a particular species', function () {
+  it('should be able to find all dinosaurs of a particular species', function() {
       park.addDino(dino);
       park.addDino(dino1);
       park.addDino(dino2);
       const actual = park.findBySpecies('T-Rex');
-      assert.deepStrictEqual(actual, [dino, dino2])
-
+      assert.deepStrictEqual(actual, [dino, dino1]);
   });
 
-  it('should be able to calculate the total number of visitors per day', function () {
+  it('should be able to calculate the total number of visitors per day', function() {
     park.addDino(dino);
     park.addDino(dino1);
     park.addDino(dino2);
