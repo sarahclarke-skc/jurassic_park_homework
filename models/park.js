@@ -25,8 +25,8 @@ Park.prototype.mostVisitedDino = function() {
             popularDino = dino;
         }
     }
-    return popularDino
-}
+    return popularDino;
+};
 
 Park.prototype.findBySpecies = function(species) {
 
@@ -38,7 +38,7 @@ Park.prototype.findBySpecies = function(species) {
         }
     }
     return listSameSpecies
-}
+};
 
 Park.prototype.numberOfDailyVisitors = function() {
 
@@ -48,10 +48,14 @@ Park.prototype.numberOfDailyVisitors = function() {
         dailyCount += dino.guestsAttractedPerDay;
     }
     return dailyCount;
-}
+};
 
 Park.prototype.totalYearlyVisitors = function() {
    return this.numberOfDailyVisitors() * 365;
+};
+
+Park.prototype.totalRevenue = function() {
+    return this.totalYearlyVisitors() * this.ticketPrice
 }
 
 module.exports = Park;
