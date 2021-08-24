@@ -5,9 +5,17 @@ const Dinosaur = require('../models/dinosaur.js');
 describe('Park', function() {
 
 let park;
+let dino1;
+let dino2;
+let dino3;
+let dino4;
 
   beforeEach(function () {
-    park = new Park('Jurassic Park', 10)
+    park = new Park('Jurassic Park', 10);
+    dino1 = new Dinosaur('T-Rex', 'carnivore', 10);
+    dino2 = new Dinosaur('Tricerotops', 'herbivore', 20);
+    dino3 = new Dinosaur('Raptor', 'carnivore', 30);
+    dino4 = new Dinosaur('Stegosaurus', 'herbivore', 40);
   });
 
   it('should have a name', function () {
@@ -40,7 +48,14 @@ let park;
     assert.deepStrictEqual(actual, expected)
   });
 
-  it('should be able to find the dinosaur that attracts the most visitors');
+  it('should be able to find the dinosaur that attracts the most visitors', function() {
+    park.addDino(dino1);
+    park.addDino(dino2);
+    park.addDino(dino3);
+    park.addDino(dino4);
+    const actual = park.mostVisitedDino();
+    assert.deepStrictEqual(actual, dino4)
+  });
 
   it('should be able to find all dinosaurs of a particular species');
 
