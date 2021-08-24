@@ -59,16 +59,22 @@ let dino4;
     assert.deepStrictEqual(actual, dino4)
   });
 
-  it('should be able to find all dinosaurs of a particular species', function () {
+  xit('should be able to find all dinosaurs of a particular species', function () {
       park.addDino(dino);
       park.addDino(dino1);
       park.addDino(dino2);
       const actual = park.findBySpecies('T-Rex');
-      assert.notDeepStrictEqual(actual, [dino, dino2])
+      assert.deepStrictEqual(actual, [dino, dino2])
 
   });
 
-  it('should be able to calculate the total number of visitors per day');
+  it('should be able to calculate the total number of visitors per day', function () {
+    park.addDino(dino);
+    park.addDino(dino1);
+    park.addDino(dino2);
+    const actual = park.numberOfDailyVisitors();
+    assert.strictEqual(actual, 35)
+  });
 
   it('should be able to calculate the total number of visitors per year');
 

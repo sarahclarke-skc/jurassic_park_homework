@@ -17,6 +17,7 @@ Park.prototype.removeDino = function (dino) {
 };
 
 Park.prototype.mostVisitedDino = function() {
+
     let popularDino = this.collectionOfDinos[0];
 
     for (const dino of this.collectionOfDinos) {
@@ -28,14 +29,25 @@ Park.prototype.mostVisitedDino = function() {
 }
 
 Park.prototype.findBySpecies = function(species) {
-    let listSameSpecies = [];
+
+    const listSameSpecies = [];
+
     for (const dino of this.collectionOfDinos) {
         if (species === dino.species) {
-            listSameSpecies.push(species)
+            listSameSpecies.push(dino)
         }
     }
     return listSameSpecies
 }
 
+Park.prototype.numberOfDailyVisitors = function() {
+
+    let dailyCount = 0;
+
+    for (const dino of this.collectionOfDinos) {
+        dailyCount += dino.guestsAttractedPerDay;
+    }
+    return dailyCount;
+}
 
 module.exports = Park;
