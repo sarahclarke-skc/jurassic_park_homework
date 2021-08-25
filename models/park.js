@@ -61,7 +61,7 @@ Park.prototype.removeSpecies = function(species) {
     const collectionPostMeteor = []
 
     for (const dino of this.collectionOfDinos) {
-        if (species === dino.species) {
+        if (species !== dino.species) { //needs to be !== not ===
             collectionPostMeteor.push(dino);
         }
     }
